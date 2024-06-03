@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "cursedvillagers",
+  "version": "${version}",
+  "name": "Cursed Villagers",
+  "description": "Makes villagers uncanny",
+  "authors": [
+	"MoriyaShiine",
+	"8onfire"
+  ],
+  "contact": {
+	"homepage": "https://modrinth.com/mod/cursed-villagers",
+	"sources": "https://github.com/MoriyaShiine/cursed-villagers",
+	"issues": "https://github.com/MoriyaShiine/cursed-villagers/issues"
+  },
+  "license": "All Rights Reserved",
+  "icon": "assets/cursedvillagers/icon.png",
+  "environment": "client",
+  "entrypoints": {
+	"client": [
+	  "moriyashiine.cursedvillagers.client.CursedVillagersClient"
+	]
+  },
+  "depends": {
+	"fabricloader": "*",
+	"minecraft": "*",
+	"java": ">=21",
+	"fabric-api": "*"
+  }
+}
