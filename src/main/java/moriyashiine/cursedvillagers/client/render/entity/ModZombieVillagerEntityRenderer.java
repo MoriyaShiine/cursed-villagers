@@ -6,7 +6,10 @@ package moriyashiine.cursedvillagers.client.render.entity;
 import moriyashiine.cursedvillagers.client.CursedVillagersClient;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
+import net.minecraft.client.render.entity.feature.ArmorFeatureRenderer;
+import net.minecraft.client.render.entity.feature.HeadFeatureRenderer;
 import net.minecraft.client.render.entity.feature.HeldItemFeatureRenderer;
+import net.minecraft.client.render.entity.model.ArmorEntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.entity.mob.ZombieVillagerEntity;
@@ -23,7 +26,9 @@ public class ModZombieVillagerEntityRenderer extends MobEntityRenderer<ZombieVil
 
 	public ModZombieVillagerEntityRenderer(EntityRendererFactory.Context context) {
 		super(context, new PlayerEntityModel<>(context.getPart(EntityModelLayers.PLAYER), false), 0.5F);
+		addFeature(new ArmorFeatureRenderer<>(this, new ArmorEntityModel<>(context.getPart(EntityModelLayers.PLAYER_INNER_ARMOR)), new ArmorEntityModel<>(context.getPart(EntityModelLayers.PLAYER_OUTER_ARMOR)), context.getModelManager()));
 		addFeature(new HeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
+		addFeature(new HeadFeatureRenderer<>(this, context.getModelLoader(), context.getHeldItemRenderer()));
 	}
 
 	@Override
