@@ -18,6 +18,6 @@ public class CursedVillagersClient implements ClientModInitializer {
 	}
 
 	public static Identifier id(String value) {
-		return new Identifier("cursedvillagers", value);
+		return Identifier.of("cursedvillagers", value);
 	}
 }
